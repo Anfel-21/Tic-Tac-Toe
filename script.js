@@ -38,6 +38,19 @@ document.addEventListener("DOMContentLoaded", () => {
        if(cell3.innerText !== "" && cell3.innerText === cell6.innerText && cell6.innerText === cell9.innerText){win()}
        if(cell1.innerText !== "" && cell1.innerText === cell5.innerText && cell5.innerText === cell9.innerText){win()}
        if(cell3.innerText !== "" && cell3.innerText === cell5.innerText && cell5.innerText === cell7.innerText){win()}
+
+       let nll = true
+        cells.forEach(cell => {
+            if (cell.innerText === "") {
+                  nll = false
+            }
+        })
+
+        if (nll) {
+        alert("No one won")
+        start()
+    }
+
     } 
     
     function win(){
@@ -47,7 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     restart.addEventListener("click", start)
 
-    function start(){     
+    function start(){   
+        trn = "X"
         turn.innerHTML = `X's turn`
         cells.forEach(cell =>{
             cell.innerHTML = ""
