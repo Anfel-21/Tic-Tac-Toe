@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
         cell.addEventListener("click", function() {
            this.innerHTML = `<h1>${trn}</h1>`
            this.disabled = true 
+           result()
            if(trn == "X"){
               trn = "O"
               turn.innerHTML = `O's turn`
            }else{
               trn = "X"
               turn.innerHTML = `X's turn`
-           } 
-           result()              
+           }               
         }) 
     })
 
